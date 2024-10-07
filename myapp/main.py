@@ -32,7 +32,9 @@ app = FastAPI(title='Symbol detection', docs_url='/docs')
 def predict(image: str = Body(..., description='image pixels list')):
     image = np.array(list(map(int, image[1:-1].split(','))))
     x = torch.from_numpy(image.reshape(-1, 28 * 28).astype(np.float32))
-    pred = model(x)
+    model.eval()
+    with torch.no_grad():
+        pred = model(x)
     return {'prediction': labels_dict[pred.argmax().item()]}
 
 # static files
