@@ -4,6 +4,7 @@ import pickle
 
 from fastapi import FastAPI, Body
 from fastapi.staticfiles import StaticFiles
+
 from myapp.model import Model
 
 import logging
