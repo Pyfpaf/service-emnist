@@ -13,7 +13,8 @@
 
 ## 2. Установка и запуск сервиса
 
-git clone <link/to/your/repo>
+
+git clone https://github.com/Pyfpaf/service-emnist.git
 cd <your_repo_name>
 docker built <parameters>
 docker run <parameters>
